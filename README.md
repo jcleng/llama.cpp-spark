@@ -220,5 +220,31 @@
 
 ## 模型下载
 
-[Spark-X2.5-4B-GGUF](https://www.modelscope.cn/models/XHToken/Spark-X2.5-4B-GGUF)
-[Spark-X2.5-1.7B-GGUF](https://www.modelscope.cn/models/XHToken/Spark-X2.5-1.7B-GGUF)
+### GGUF 量化模型（llama.cpp / Ollama 直接加载）
+
+| 模型 | 下载地址 | 包含文件 |
+| --- | --- | --- |
+| Spark-X2.5-4B-GGUF | [ModelScope](https://www.modelscope.cn/models/XHToken/Spark-X2.5-4B-GGUF) | `Spark-X2.5-4B-Q4_K_M.gguf`（约 2.48 GB）、`Spark-X2.5-4B-Q8_0.gguf`（约 4.17 GB）、`Spark-X2.5-4B.gguf`（FP16/BF16，约 7.85 GB） |
+| Spark-X2.5-1.7B-GGUF | [ModelScope](https://www.modelscope.cn/models/XHToken/Spark-X2.5-1.7B-GGUF) | `Spark-X2.5-1.7B-Q4_K_M.gguf`（约 1.06 GB）、`Spark-X2.5-1.7B-Q8_0.gguf`（约 1.74 GB）、`Spark-X2.5-1.7B.gguf`（FP16/BF16，约 3.26 GB） |
+
+> 本目录已包含两个 `Q4_K_M` 量化权重：`Spark-X2.5-4B-Q4_K_M.gguf`、`Spark-X2.5-1.7B-Q4_K_M.gguf`。
+
+### 原始模型（BF16，用于转换或非 GGUF 推理框架）
+
+| 模型 | 下载地址 | 说明 |
+| --- | --- | --- |
+| Spark-X2.5-4B | [ModelScope](https://modelscope.cn/models/XHToken/Spark-X2.5-4B) | 4B 参数原始权重，原生支持最长 1M token 上下文 |
+| Spark-X2.5-1.7B | [ModelScope](https://modelscope.cn/models/XHToken/Spark-X2.5-1.7B) | 1.7B 参数原始权重，原生支持最长 1M token 上下文 |
+
+### 下载方式
+
+```sh
+# 方式一：ModelScope CLI（推荐，可断点续传）
+pip install modelscope
+modelscope download --model XHToken/Spark-X2.5-4B-GGUF --local_dir ./Spark-X2.5-4B-GGUF
+
+# 方式二：直接下载单个 GGUF 文件
+wget https://www.modelscope.cn/models/XHToken/Spark-X2.5-4B-GGUF/resolve/master/Spark-X2.5-4B-Q4_K_M.gguf
+```
+
+> 注：`modelscope.cn` 与 `www.modelscope.cn` 两个域名等价，均可访问。四个模型均为 Apache-2.0 许可证。
