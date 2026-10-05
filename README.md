@@ -217,3 +217,8 @@
 
 - 本目录中的模型权重文件较大（约 2.5 GB），建议根据存储条件合理放置，并注意文件完整性校验。
 - 两个推理引擎（llama.cpp 与 Ollama）可独立使用，也可按场景选择其一，或组合使用完成推理与服务部署。
+
+## 模型下载
+
+[Spark-X2.5-4B-GGUF](https://www.modelscope.cn/models/XHToken/Spark-X2.5-4B-GGUF)
+[Spark-X2.5-1.7B-GGUF](https://www.modelscope.cn/models/XHToken/Spark-X2.5-1.7B-GGUF)
