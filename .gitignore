@@ -1,3 +1,5 @@
 .vscode/
 llama.cpp-spark-release.zip
 **.gguf
+ollama-spark
+llama.cpp-spark
